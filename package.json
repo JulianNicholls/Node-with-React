@@ -1,0 +1,41 @@
+{
+  "name": "nwr-emaily",
+  "version": "1.0.0",
+  "description": "Code from the Node with React course by Stephen Grider",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.x",
+    "npm": "6.2.x"
+  },
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianNicholls/Niode-with-React"
+  },
+  "keywords": [],
+  "author": "Julian Nicholls",
+  "license": "ISC",
+  "homepage": "https://github.com/JulianNicholls/Niode-with-React",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.1.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0"
+  }
+}
