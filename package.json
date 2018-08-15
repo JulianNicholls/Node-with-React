@@ -8,16 +8,17 @@
     "npm": "6.2.x"
   },
   "scripts": {
-    "start": "node server/server.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JulianNicholls/Niode-with-React"
+    "url": "git+https://github.com/JulianNicholls/Node-with-React"
   },
   "keywords": [],
   "author": "Julian Nicholls",
   "license": "ISC",
-  "homepage": "https://github.com/JulianNicholls/Niode-with-React",
+  "homepage": "https://github.com/JulianNicholls/Node-with-React",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

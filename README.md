@@ -7,6 +7,8 @@ Beginning
 
 ## Differences from Stephen
 
+I will be checking in much more often than Stephen does.
+
 ## Git client
 
 I have used Git at the command-line for 10 years.
