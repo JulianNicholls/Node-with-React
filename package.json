@@ -4,8 +4,8 @@
   "description": "Code from the Node with React course by Stephen Grider",
   "main": "index.js",
   "engines": {
-    "node": "8.11.x",
-    "npm": "6.2.x"
+    "node": "10.8.x",
+    "npm": "6.3.x"
   },
   "scripts": {
     "start": "node index.js",
