@@ -4,12 +4,11 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const authRoutes = require('./routes/auth');
+const { mongoURI, cookieKey } = require('./config/keys');
 
 require('./models/User');
 
 require('./services/passport');
-
-const { mongoURI, cookieKey } = require('./config/keys');
 
 mongoose.connect(
   mongoURI,
@@ -30,8 +29,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// I prefer this way, rather than
-// require('./routes/x')(app);
+// I prefer this way, rather than require('./routes/x')(app);
 authRoutes(app);
 
 app.get('/', (req, res) => {
