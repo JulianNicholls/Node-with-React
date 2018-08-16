@@ -14,7 +14,7 @@ build
 
 npm-debug.log*
 
-config.js
+config
 public/scripts/App.js
 public/dist/
 .env.*

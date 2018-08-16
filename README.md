@@ -3,11 +3,11 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Beginning
+Working on section 3 - Authentication with Google
 
 ## Differences from Stephen
 
-I will be checking in much more often than Stephen does.
+I will be checking in my code to Git and Github much more often than Stephen does.
 
 ## Git client
 
