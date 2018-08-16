@@ -3,7 +3,7 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Working on section 3 - Authentication with Google
+Working on section 3 - Adding MongoDB
 
 ## Differences from Stephen
 
