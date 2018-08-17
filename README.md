@@ -3,7 +3,7 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Working on section 3 - Adding MongoDB
+Working on section 5 - Dev vs Prod environments
 
 ## Differences from Stephen
 
