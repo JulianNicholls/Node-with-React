@@ -3,7 +3,7 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Working on section 5 - Dev vs Prod environments
+Starting section 6 - Client side
 
 ## Differences from Stephen
 
