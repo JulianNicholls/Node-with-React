@@ -7,7 +7,7 @@ Starting section 6 - Client side
 
 ## Differences from Stephen
 
-* I will be checking in my code to Git and Github much more often than Stephen does.
+* I will be checking in my code to git and Github much more often than Stephen does.
 
 * I am saving the display name for a user along with the Google ID.
 

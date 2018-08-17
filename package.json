@@ -1,5 +1,5 @@
 {
-  "name": "nwr-emaily",
+  "name": "nwr-emaily-2018-server",
   "version": "1.0.0",
   "description": "Code from the Node with React course by Stephen Grider",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js",
+    "server": "nodemon index.js --ignore client",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
