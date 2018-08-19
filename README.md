@@ -3,13 +3,15 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Starting section 6 - Client side
+Working on Section 7 - Developing the Client Side
 
 ## Differences from Stephen
 
-* I will be checking in my code to git and Github much more often than Stephen does.
+* I will be checking in my code to git and Github much more often than 
+Stephen does. Later on, I will probably deploy to Heroku more often too.
 
-* I am saving the display name for a user along with the Google ID.
+* I am saving the display name for a user along with the Google ID and 
+displaying it in the header.
 
 ## Git client
 
