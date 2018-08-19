@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-class Header extends React.Component {
+class Header extends Component {
+  renderButton() {
+    switch (this.props.auth) {
+      case null:
+        return null;
+
+      case false:
+        return (
+          <li>
+            <a href="/auth/google">Log in with Google</a>
+          </li>
+        );
+
+      default:
+        return (
+          <Fragment>
+            <li>{this.props.auth.displayName}</li>
+            <li>
+              <a href="/api/logout">Log out</a>
+            </li>
+          </Fragment>
+        );
+    }
+  }
+
   render() {
     return (
       <nav>
@@ -12,28 +36,13 @@ class Header extends React.Component {
           <a className="left brand-logo" href="/">
             Emaily 2018
           </a>
-          <ul className="right">
-            {this.props.auth.googleID ? (
-              <React.Fragment>
-                <li>{this.props.auth.displayName}</li>
-                <li>
-                  <a href="/api/logout">Log out</a>
-                </li>
-              </React.Fragment>
-            ) : (
-              <li>
-                <a href="/auth/google">Log in with Google</a>
-              </li>
-            )}
-          </ul>
+          <ul className="right">{this.renderButton()}</ul>
         </div>
       </nav>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return { auth: state.auth };
-};
+const mapStateToProps = ({ auth }) => ({ auth });
 
 export default connect(mapStateToProps)(Header);
