@@ -30,9 +30,6 @@ class Header extends Component {
           <li key="pay">
             <Payments />
           </li>,
-          // <li key="name" style={{ marginLeft: '1rem' }}>
-          //   {auth.displayName}
-          // </li>,
           <li key="logout">
             <a href="/api/logout">Log out</a>
           </li>
