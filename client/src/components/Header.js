@@ -6,7 +6,9 @@ import Payments from './Payments';
 
 class Header extends Component {
   renderButtons = () => {
-    switch (this.props.auth) {
+    const { auth } = this.props;
+
+    switch (auth) {
       case null:
         return null;
 
@@ -21,12 +23,16 @@ class Header extends Component {
 
       default:
         return [
+          <li key="credits" style={{ marginRight: '1rem' }}>
+            {auth.displayName} - {auth.credits !== 0 ? auth.credits : 'No'}{' '}
+            credits
+          </li>,
           <li key="pay">
             <Payments />
           </li>,
-          <li key="name" style={{ marginLeft: '1rem' }}>
-            {this.props.auth.displayName}
-          </li>,
+          // <li key="name" style={{ marginLeft: '1rem' }}>
+          //   {auth.displayName}
+          // </li>,
           <li key="logout">
             <a href="/api/logout">Log out</a>
           </li>
