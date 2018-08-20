@@ -3,7 +3,7 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Working on Section 7 - Developing the Client Side
+Working on Section 8 - Handling Payments
 
 ## Differences from Stephen
 

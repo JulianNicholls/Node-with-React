@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
-  renderButton() {
+  renderButton = () => {
     switch (this.props.auth) {
       case null:
         return null;
@@ -24,18 +25,27 @@ class Header extends Component {
           </Fragment>
         );
     }
-  }
+  };
 
   render() {
     return (
-      <nav>
+      <nav style={{ marginBottom: '10px' }}>
         <div
           className="nav-wrapper indigo darken-4"
           style={{ paddingLeft: '0.5rem' }}
         >
-          <a className="left brand-logo" href="/">
-            Emaily 2018
-          </a>
+          <Link
+            to={this.props.auth ? '/surveys' : '/'}
+            className="left brand-logo"
+          >
+            <img
+              src="/images/emaily-logo-tr.png"
+              height="32px"
+              alt="Emaily 2018 Logo"
+              style={{ marginRight: '8px' }}
+            />
+            Emaily
+          </Link>
           <ul className="right">{this.renderButton()}</ul>
         </div>
       </nav>

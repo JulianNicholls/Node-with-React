@@ -3,12 +3,21 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Header from './Header';
+import LandingPage from './LandingPage';
 
 import { fetchUser } from '../actions/auth';
 
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>New Survey</h2>;
-const LandingPage = () => <h2>Landing Page</h2>;
+const Dashboard = () => (
+  <div className="container">
+    <h2>Dashboard</h2>
+  </div>
+);
+
+const SurveyNew = () => (
+  <div className="container">
+    <h2>New Survey</h2>
+  </div>
+);
 
 class App extends React.Component {
   componentDidMount() {
