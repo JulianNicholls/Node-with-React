@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 const authRoutes = require('./routes/auth');
+const billingRoutes = require('./routes/billing');
+
 const { mongoURI, cookieKey } = require('./config/keys');
 
 require('./models/User');
@@ -26,15 +28,14 @@ app.use(
   })
 );
 
+app.use(express.json());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 // I prefer this way, rather than require('./routes/x')(app);
 authRoutes(app);
-
-app.get('/', (req, res) => {
-  res.send({ OAuth: 'Successful' });
-});
+billingRoutes(app);
 
 const port = process.env.PORT || 5000;
 
