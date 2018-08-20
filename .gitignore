@@ -17,5 +17,4 @@ npm-debug.log*
 config
 public/scripts/App.js
 public/dist/
-.env.*
-tmux*
+.env*
