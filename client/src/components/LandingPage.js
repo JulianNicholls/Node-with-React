@@ -15,9 +15,10 @@ const LandingPage = () => (
         alt="Emaily 2018 Logo"
         style={{ display: 'inline-block', marginRight: '1rem' }}
       />
-      <h2 style={{ display: 'inline-block' }}>Emaily 2018</h2>
+      <h2 style={{ display: 'inline-block' }}>Emaily Survey Creator 2018</h2>
     </div>
-    <h5>Craft your own surveys and collect great feedback from your users.</h5>
+    <h5>Ask your users relevant questions and collect great feedback.</h5>
+    <h5>Emaily offers attractive survey emails with reasonable rates.</h5>
   </div>
 );
 

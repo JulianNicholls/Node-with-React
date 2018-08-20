@@ -1,9 +1,11 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Payments from './Payments';
+
 class Header extends Component {
-  renderButton = () => {
+  renderButtons = () => {
     switch (this.props.auth) {
       case null:
         return null;
@@ -11,19 +13,24 @@ class Header extends Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Log in with Google</a>
+            <a className="waves-effect waves-light btn" href="/auth/google">
+              Log in with Google
+            </a>
           </li>
         );
 
       default:
-        return (
-          <Fragment>
-            <li>{this.props.auth.displayName}</li>
-            <li>
-              <a href="/api/logout">Log out</a>
-            </li>
-          </Fragment>
-        );
+        return [
+          <li key="pay">
+            <Payments />
+          </li>,
+          <li key="name" style={{ marginLeft: '1rem' }}>
+            {this.props.auth.displayName}
+          </li>,
+          <li key="logout">
+            <a href="/api/logout">Log out</a>
+          </li>
+        ];
     }
   };
 
@@ -46,7 +53,7 @@ class Header extends Component {
             />
             Emaily
           </Link>
-          <ul className="right">{this.renderButton()}</ul>
+          <ul className="right">{this.renderButtons()}</ul>
         </div>
       </nav>
     );
