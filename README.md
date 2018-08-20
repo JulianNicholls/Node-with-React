@@ -13,6 +13,8 @@ Stephen does. Later on, I will probably deploy to Heroku more often too.
 * I am saving the display name for a user along with the Google ID and 
 displaying it in the header.
 
+* Some of my action creators / action names are different.
+
 ## Git client
 
 I have used Git at the command-line for 10 years.
