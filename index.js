@@ -3,15 +3,16 @@ const cookieSession = require('cookie-session');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-const authRoutes = require('./routes/auth');
-const billingRoutes = require('./routes/billing');
-
 const { mongoURI, cookieKey } = require('./config/keys');
 
 require('./models/User');
 require('./models/Survey');
 
 require('./services/passport');
+
+const authRoutes = require('./routes/auth');
+const billingRoutes = require('./routes/billing');
+const surveyRoutes = require('./routes/survey');
 
 mongoose.connect(
   mongoURI,
@@ -37,6 +38,7 @@ app.use(passport.session());
 // I prefer this way, rather than require('./routes/x')(app);
 authRoutes(app);
 billingRoutes(app);
+surveyRoutes(app);
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets,

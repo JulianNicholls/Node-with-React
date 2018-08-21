@@ -15,6 +15,11 @@ displaying it in the header.
 
 * Some of my action creators / action names are different.
 
+* Some of my API endpoints are different, e.g. /api/add_survey
+
+* My list of recipients is delimited by either a comma or semicolon and optional
+whitespace.
+
 ## Git client
 
 I have used Git at the command-line for 10 years.
