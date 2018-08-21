@@ -28,7 +28,7 @@ app.use(
   })
 );
 
-app.use(express.json());
+app.use(express.json());    // body-parser is no longer required
 
 app.use(passport.initialize());
 app.use(passport.session());

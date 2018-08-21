@@ -14,7 +14,7 @@ const Payments = ({ addCredits }) => (
     token={token => addCredits(token)}
     stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
   >
-    <button className="waves-effect waves-light btn">Add Credits</button>
+    <button className="btn indigo">Add Credits</button>
   </StripeCheckout>
 );
 
