@@ -9,6 +9,7 @@ const billingRoutes = require('./routes/billing');
 const { mongoURI, cookieKey } = require('./config/keys');
 
 require('./models/User');
+require('./models/Survey');
 
 require('./services/passport');
 
@@ -28,7 +29,7 @@ app.use(
   })
 );
 
-app.use(express.json());    // body-parser is no longer required
+app.use(express.json()); // body-parser is no longer required
 
 app.use(passport.initialize());
 app.use(passport.session());
