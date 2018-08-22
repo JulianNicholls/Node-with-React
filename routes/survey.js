@@ -9,6 +9,10 @@ const requireCredits = require('../middleware/requireCredits');
 const Survey = mongoose.model('surveys');
 
 module.exports = app => {
+  app.get('/api/surveys/thanks', (req, res) => {
+    res.send('Thanks for responding.');
+  });
+
   app.post('/api/add_survey', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
 
