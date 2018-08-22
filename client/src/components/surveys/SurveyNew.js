@@ -1,9 +1,19 @@
+// Show SurveyForm and SurveyReview
+
 import React from 'react';
 
-const SurveyNew = () => (
-  <div className="container">
-    <h2>New Survey</h2>
-  </div>
-);
+import SurveyForm from './SurveyForm';
+import SurveyReview from './SurveyReview';
+
+class SurveyNew extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <SurveyForm />
+        <SurveyReview />
+      </div>
+    );
+  }
+}
 
 export default SurveyNew;
