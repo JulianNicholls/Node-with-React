@@ -24,8 +24,7 @@ class Header extends Component {
       default:
         return [
           <li key="credits" style={{ marginRight: '1rem' }}>
-            {auth.displayName} - {auth.credits !== 0 ? auth.credits : 'No'}{' '}
-            credits
+            {auth.displayName}, {auth.credits !== 0 ? auth.credits : 'No'} credits
           </li>,
           <li key="pay">
             <Payments />
