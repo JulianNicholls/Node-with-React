@@ -20,6 +20,10 @@ displaying it in the header.
 * My list of recipients is delimited by either a comma or semicolon and optional
 whitespace.
 
+* The sendgrid npm module has been superseded by @sendgrid/... I have decided to 
+continue using it for now, but I will probably come back and rewrite the Mailer 
+using the latest version after completing the course.
+
 ## Git client
 
 I have used Git at the command-line for 10 years.

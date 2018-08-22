@@ -10,6 +10,14 @@ import reducers from './reducers';
 
 import 'materialize-css/dist/css/materialize.min.css';
 
+//---------------------------------------------------------------------------
+// TEMPORARY DEBUGGING CODE
+
+import axios from 'axios';
+window.axios = axios;
+
+//---------------------------------------------------------------------------
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(

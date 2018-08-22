@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+const Mailer = require('../services/Mailer');
+const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
+
 const requireLogin = require('../middleware/requireLogin');
 const requireCredits = require('../middleware/requireCredits');
 
@@ -18,7 +21,22 @@ module.exports = app => {
       dateSent: Date.now()
     });
 
-    await survey.save();
+    // Send the email(s)
+
+    const mailer = new Mailer(survey, surveyTemplate(survey));
+
+    try {
+      await mailer.send();
+
+      await survey.save();
+
+      --req.user.credits;
+      const user = await req.user.save();
+
+      res.send(user);
+    } catch (err) {
+      res.status(422).send(err);
+    }
   });
 
   app.post('/api/set_credits', requireLogin, async (req, res) => {
@@ -32,7 +50,5 @@ module.exports = app => {
 
 const stringToRecipientArray = recipientStr => {
   // Split at , or ;, with optional whitespace
-  return recipientStr
-    .split(/[,;]\s*/)
-    .map(email => ({ email: email.trim() }));
+  return recipientStr.split(/[,;]\s*/).map(email => ({ email: email.trim() }));
 };
