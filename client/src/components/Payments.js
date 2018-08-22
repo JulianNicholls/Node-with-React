@@ -7,7 +7,7 @@ import { addCredits } from '../actions/auth';
 const Payments = ({ addCredits }) => (
   <StripeCheckout
     name="Emaily Survey Creator 2018"
-    image="/images/emaily-logo-tr.png"
+    image="/images/emaily-logo-2.png"
     description="5 credits for sending out survey emails"
     amount={500} // Pennies
     currency="USD" // For now...

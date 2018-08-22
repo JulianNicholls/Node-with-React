@@ -49,7 +49,7 @@ class Header extends Component {
             className="left brand-logo"
           >
             <img
-              src="/images/emaily-logo-tr.png"
+              src="/images/emaily-logo-2.png"
               height="32px"
               alt="Emaily 2018 Logo"
               style={{ marginRight: '8px' }}

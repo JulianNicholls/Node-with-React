@@ -11,7 +11,7 @@ const LandingPage = () => (
   >
     <div>
       <img
-        src="/images/emaily-logo-tr.png"
+        src="/images/emaily-logo-2.png"
         alt="Emaily 2018 Logo"
         style={{ display: 'inline-block', marginRight: '1rem' }}
       />
