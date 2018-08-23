@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
 
-import { addCredits } from '../actions/auth';
+import { addCredits } from '../actions';
 
 const Payments = ({ addCredits }) => (
   <StripeCheckout

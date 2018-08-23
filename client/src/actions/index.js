@@ -13,3 +13,11 @@ export const addCredits = token => async dispatch => {
 
   dispatch({ type: FETCH_USER, user: response.data });
 };
+
+export const submitSurvey = (values, history) => async dispatch => {
+  const response = await axios.post('/api/add_survey', values);
+
+  history.push('/surveys');
+
+  dispatch({ type: FETCH_USER, user: response.data });
+};

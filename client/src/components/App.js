@@ -7,7 +7,7 @@ import LandingPage from './LandingPage';
 import DashboardPage from './surveys/DashboardPage';
 import SurveyNew from './surveys/SurveyNew';
 
-import { fetchUser } from '../actions/auth';
+import { fetchUser } from '../actions';
 
 class App extends React.Component {
   componentDidMount() {
