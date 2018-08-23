@@ -13,7 +13,7 @@ export default [
   },
   {
     name: 'body',
-    label: 'Survey Body',
+    label: 'Survey Question',
     placeholder: 'The yes / no question to ask',
     errorText: 'You must ask a yes / no question in the survey'
   },

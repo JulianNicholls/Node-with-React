@@ -23,17 +23,24 @@ class SurveyForm extends React.Component {
   };
 
   render() {
+    const { handleSubmit, onSurveySubmit } = this.props;
+
     return (
-      <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
-        {this.renderFields()}
-        <Link to="/surveys" className="btn-flat teal white-text">
-          Cancel
-        </Link>
-        <button className="btn-flat indigo white-text right" type="submit">
-          Next
-          <i className="material-icons right">navigate_next</i>
-        </button>
-      </form>
+      <div>
+        <h5 style={{ textAlign: 'center' }}>New Survey</h5>
+        <form onSubmit={handleSubmit(onSurveySubmit)}>
+          {this.renderFields()}
+
+          <Link to="/surveys" className="btn-flat teal white-text">
+            Cancel
+          </Link>
+
+          <button className="btn-flat indigo white-text right" type="submit">
+            Next
+            <i className="material-icons right">navigate_next</i>
+          </button>
+        </form>
+      </div>
     );
   }
 }
@@ -52,5 +59,6 @@ const validate = values => {
 
 export default reduxForm({
   form: 'survey',
-  validate
+  validate,
+  destroyOnUnmount: false
 })(SurveyForm);

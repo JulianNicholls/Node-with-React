@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DashboardPage = () => (
   <div className="container">
-    <h2>Surveys</h2>
+    <h5 style={{ textAlign: 'center' }}>Surveys</h5>
     <div className="fixed-action-btn">
       <Link to="/surveys/new" className="btn-floating btn-large indigo">
         <i className="material-icons">add</i>
