@@ -7,13 +7,17 @@ const SurveyField = ({ input, label, placeholder, meta: { touched, error } }) =>
       <input
         {...input}
         placeholder={placeholder}
-        style={{ marginBottom: '5px' }}
+        style={{ marginBottom: '25px' }}
       />
-      {touched && (
-        <div className="red-text text-darken-2" style={{ marginBottom: '20px' }}>
-          {error}
-        </div>
-      )}
+      {touched &&
+        error && (
+          <div
+            className="red-text text-darken-2"
+            style={{ marginTop: '-20px', marginBottom: '5px' }}
+          >
+            {error}
+          </div>
+        )}
     </div>
   );
 };
