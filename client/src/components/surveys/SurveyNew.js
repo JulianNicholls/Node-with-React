@@ -10,7 +10,6 @@ class SurveyNew extends React.Component {
     return (
       <div className="container">
         <SurveyForm />
-        <SurveyReview />
       </div>
     );
   }
