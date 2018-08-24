@@ -13,6 +13,14 @@ const requireCredits = require('../middleware/requireCredits');
 const Survey = mongoose.model('surveys');
 
 module.exports = app => {
+  app.get('/api/surveys', requireLogin, async (req, res) => {
+    const surveys = await Survey.find({ _user: req.user.id }).select({
+      recipients: false
+    });
+
+    res.send(surveys);
+  });
+
   app.post('/api/add_survey', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
 
@@ -58,7 +66,7 @@ module.exports = app => {
   // } ]
 
   app.post('/api/surveys/webhooks', (req, res) => {
-    console.log('Events:', req.body.length);
+    console.log('Webhook Events:', req.body.length);
 
     const p = new Path('/api/surveys/:surveyID/:choice');
 
@@ -83,7 +91,7 @@ module.exports = app => {
           {
             $inc: { [choice]: 1 },
             $set: { 'recipients.$.responded': true },
-            lastResponded: new Date()
+            lastResponded: Date.now()
           }
         ).exec();
       })

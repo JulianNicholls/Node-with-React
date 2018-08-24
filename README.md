@@ -3,7 +3,7 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Starting Section 11 - Back to the Client
+Starting Section 13 - The Home Stretch
 
 ## Differences from Stephen
 
@@ -21,8 +21,8 @@ displaying it in the header.
 whitespace.
 
 * The sendgrid npm module has been superseded by @sendgrid/... I have decided to 
-continue using it for now, but I will probably come back and rewrite the Mailer 
-using the latest version after completing the course.
+continue using the same version as Stephen for now, but I will probably come back 
+and rewrite the Mailer using the latest version after completing the course.
 
 ## Git client
 
