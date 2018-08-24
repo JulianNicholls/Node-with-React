@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
+import moment from 'moment';
 
 import App from './components/App';
 
@@ -10,13 +11,7 @@ import reducers from './reducers';
 
 import 'materialize-css/dist/css/materialize.min.css';
 
-//---------------------------------------------------------------------------
-// TEMPORARY DEBUGGING CODE
-
-import axios from 'axios';
-window.axios = axios;
-
-//---------------------------------------------------------------------------
+moment.locale('en-gb');
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

@@ -13,7 +13,8 @@ Stephen does. Later on, I will probably deploy to Heroku more often too.
 * I am saving the display name for a user along with the Google ID and 
 displaying it in the header.
 
-* Some of my action creators / action names are different.
+* Some of my action creators / action names are different and the data index
+is called user or surveys, rarely payload.
 
 * Some of my API endpoints are different, e.g. /api/add_survey
 
