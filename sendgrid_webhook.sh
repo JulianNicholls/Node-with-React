@@ -1,5 +1,7 @@
+#! /bin/bash
+
 function localtunnel {
-  node_modules/.bin/lt -s julianemailywebhook -p 5000 --print-requests
+  node_modules/.bin/lt --subdomain julianemailywebhook --port 5000 --print-requests
 }
 
 until localtunnel; do
