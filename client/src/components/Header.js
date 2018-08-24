@@ -22,9 +22,11 @@ class Header extends Component {
         );
 
       default:
+        const { displayName, credits } = auth;
+        
         return [
           <li key="credits" style={{ marginRight: '1rem' }}>
-            {auth.displayName}, {auth.credits !== 0 ? auth.credits : 'No'} credits
+            {displayName}, {credits !== 0 ? credits : 'No'} credits
           </li>,
           <li key="pay">
             <Payments />
@@ -51,7 +53,7 @@ class Header extends Component {
               src="/images/emaily-logo-2.png"
               height="32px"
               alt="Emaily 2018 Logo"
-              style={{ marginRight: '8px' }}
+              style={{ margin: '0 8px -5px 0' }}
             />
             Emaily
           </Link>
