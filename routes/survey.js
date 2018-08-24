@@ -62,7 +62,9 @@ module.exports = app => {
 
     const p = new Path('/api/surveys/:surveyID/:choice');
 
-    const events = _.chain(req.body)
+    // .value() not only returns the value, if any, but causes lodash to run
+    // the chain
+    _.chain(req.body)
       .map(({ email, url }) => {
         const match = p.test(new URL(url).pathname);
 
@@ -70,15 +72,28 @@ module.exports = app => {
       })
       .compact()
       .uniqBy('email', 'surveyID')
+      .each(({ surveyID, email, choice }) => {
+        Survey.updateOne(
+          {
+            _id: surveyID,
+            recipients: {
+              $elemMatch: { email: email, responded: false }
+            }
+          },
+          {
+            $inc: { [choice]: 1 },
+            $set: { 'recipients.$.responded': true },
+            lastResponded: new Date()
+          }
+        ).exec();
+      })
       .value();
-
-    console.log(events);
 
     res.send({ ok: 'true' });
   });
 
   app.get('/api/surveys/:surveyid/:choice', (req, res) => {
-    res.send('Thanks for responding.');
+    res.send('<h3>Thanks for responding.</h3>');
   });
 };
 
