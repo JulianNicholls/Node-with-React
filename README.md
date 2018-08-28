@@ -3,7 +3,7 @@ Code from the Node with React: Full-stack Web Development course by Stephen Grid
 
 ## Progress
 
-Starting Section 13 - The Home Stretch
+Completed Section 13 - The Home Stretch, working on improvements
 
 ## Differences from Stephen
 
@@ -24,6 +24,15 @@ whitespace.
 * The sendgrid npm module has been superseded by @sendgrid/... I have decided to 
 continue using the same version as Stephen for now, but I will probably come back 
 and rewrite the Mailer using the latest version after completing the course.
+
+## Deployed Application
+
+The application is deployed on [Heroku](https://emaily-2018.herokuapp.com).
+
+*NOTE* It really does send out surveys!
+
+Feel free to log in, send one survey to a recipient or two, but please don't 
+abuse it.
 
 ## Git client
 
