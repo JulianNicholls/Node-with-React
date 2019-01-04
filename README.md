@@ -29,7 +29,7 @@ and rewrite the Mailer using the latest version after completing the course.
 
 The application is deployed on [Heroku](https://emaily-2018.herokuapp.com).
 
-*NOTE* It really does send out surveys!
+**NOTE**: It really does send out surveys!
 
 Feel free to log in, send one survey to a recipient or two, but please don't 
 abuse it.
