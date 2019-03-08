@@ -4,7 +4,8 @@ import moment from 'moment';
 
 import { fetchSurveys } from '../../actions';
 
-const smallInfo = { fontSize: '85%', color: '#ccc' };
+const smallInfo = { fontSize: '0.85em', color: 'rgba(255, 255, 255, 0.8)' };
+const indented = { display: 'inline-block', marginLeft: '2rem' };
 
 class SurveyList extends React.Component {
   componentDidMount() {
@@ -33,9 +34,12 @@ class SurveyList extends React.Component {
             Sent {dateDisplay}
           </p>
         </div>
-        <div className="card-action">
-          <a>Yes: {yes}</a>
-          <a>No: {no}</a>
+
+        <div className="card-action white-text">
+          <span style={indented}>Yes:</span>{' '}
+          <span className="yellow-text">{yes}</span>
+          <span style={indented}>No:</span>{' '}
+          <span className="yellow-text">{no}</span>
         </div>
       </div>
     );
