@@ -15,10 +15,19 @@ const Survey = mongoose.model('surveys');
 module.exports = app => {
   app.get('/api/surveys', requireLogin, async (req, res) => {
     const surveys = await Survey.find({ _user: req.user.id }).select({
-      recipients: false
+      recipients: false,
     });
 
     res.send(surveys);
+  });
+
+  app.get('/api/survey/:id', async (req, res) => {
+    try {
+      const survey = await Survey.findOne({ _id: req.params.id });
+      res.send(survey);
+    } catch (err) {
+      res.status(404).send(err);
+    }
   });
 
   app.post('/api/add_survey', requireLogin, requireCredits, async (req, res) => {
@@ -30,7 +39,7 @@ module.exports = app => {
       body,
       recipients: stringToRecipientArray(recipients),
       _user: req.user.id,
-      dateSent: Date.now()
+      dateSent: Date.now(),
     });
 
     // Send the email(s), save the survey, remove a credit, and return the user
@@ -85,13 +94,13 @@ module.exports = app => {
           {
             _id: surveyID,
             recipients: {
-              $elemMatch: { email: email, responded: false }
-            }
+              $elemMatch: { email: email, responded: false },
+            },
           },
           {
             $inc: { [choice]: 1 },
             $set: { 'recipients.$.responded': true },
-            lastResponded: Date.now()
+            lastResponded: Date.now(),
           }
         ).exec();
       })

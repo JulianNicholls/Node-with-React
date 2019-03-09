@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { FETCH_USER, FETCH_SURVEYS } from './types';
+import { FETCH_USER, FETCH_SURVEYS, FETCH_DETAIL } from './types';
 
 // Return the logged in user, or null
 export const fetchUser = () => async dispatch => {
@@ -16,7 +16,7 @@ export const addCredits = token => async dispatch => {
   dispatch({ type: FETCH_USER, user: response.data });
 };
 
-// Add a new survey for the logged in user, and return her
+// Add a new survey for the logged in user, and return here
 export const submitSurvey = (values, history) => async dispatch => {
   const response = await axios.post('/api/add_survey', values);
 
@@ -30,4 +30,11 @@ export const fetchSurveys = () => async dispatch => {
   const response = await axios.get('/api/surveys');
 
   dispatch({ type: FETCH_SURVEYS, surveys: response.data });
+};
+
+// Return the detail for the selected survey
+export const fetchDetail = id => async dispatch => {
+  const response = await axios.get(`/api/survey/${id}`);
+
+  dispatch({ type: FETCH_DETAIL, detail: response.data });
 };
