@@ -25,6 +25,9 @@ whitespace.
 continue using the same version as Stephen for now, but I will probably come back 
 and rewrite the Mailer using the latest version after completing the course.
 
+* Clicking on a survey in the dashboard will open a detail page which list recipients, 
+also showing which ones have responded.
+
 ## Deployed Application
 
 The application is deployed on [Heroku](https://emaily-2018.herokuapp.com).
