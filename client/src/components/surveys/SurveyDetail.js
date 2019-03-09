@@ -82,13 +82,15 @@ class SurveyDetail extends Component {
                 <td colSpan="4">{formatDate(lastResponded)}</td>
               </tr>
 
-              <tr>
-                <th style={headerStyle}>Responses</th>
-                <th style={narrowStyle}>No</th>
-                <td>{no}</td>
-                <th style={narrowStyle}>Yes</th>
-                <td>{yes}</td>
-              </tr>
+              {lastResponded && (
+                <tr>
+                  <th style={headerStyle}>Responses</th>
+                  <th style={narrowStyle}>No</th>
+                  <td>{no}</td>
+                  <th style={narrowStyle}>Yes</th>
+                  <td>{yes}</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
