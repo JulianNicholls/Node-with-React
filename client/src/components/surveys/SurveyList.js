@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import moment from 'moment';
 
 import { fetchSurveys } from '../../actions';
+import formatDate from '../../utils/dates';
 
 const smallInfo = { fontSize: '0.85em', color: 'rgba(255, 255, 255, 0.8)' };
 const indented = { display: 'inline-block', marginLeft: '2rem' };
@@ -13,35 +14,30 @@ class SurveyList extends React.Component {
   }
 
   renderCard = ({ dateSent, _id, title, subject, body, yes, no }) => {
-    const stamp = moment(dateSent);
-    let dateDisplay = stamp.format('[at] LT [on] LL');
-
-    if (moment().unix() - stamp.unix() < 15 * 86400)
-      // Last fortnight
-      dateDisplay = stamp.fromNow();
-
     return (
-      <div key={_id} className="card purple darken-4">
-        <div className="card-content white-text">
-          <span className="card-title">{title}</span>
-          <p>
-            <span style={smallInfo}>Subject:</span> {subject}
-          </p>
-          <p>
-            <span style={smallInfo}>Question:</span> {body}
-          </p>
-          <p className="right" style={smallInfo}>
-            Sent {dateDisplay}
-          </p>
-        </div>
+      <Link to={`/survey/${_id}`} key={_id}>
+        <div className="card purple darken-4">
+          <div className="card-content white-text">
+            <span className="card-title">{title}</span>
+            <p>
+              <span style={smallInfo}>Subject:</span> {subject}
+            </p>
+            <p>
+              <span style={smallInfo}>Question:</span> {body}
+            </p>
+            <p className="right" style={smallInfo}>
+              Sent {formatDate(dateSent)}
+            </p>
+          </div>
 
-        <div className="card-action white-text">
-          <span style={indented}>Yes:</span>{' '}
-          <span className="yellow-text">{yes}</span>
-          <span style={indented}>No:</span>{' '}
-          <span className="yellow-text">{no}</span>
+          <div className="card-action white-text">
+            <span style={indented}>Yes:</span>{' '}
+            <span className="yellow-text">{yes}</span>
+            <span style={indented}>No:</span>{' '}
+            <span className="yellow-text">{no}</span>
+          </div>
         </div>
-      </div>
+      </Link>
     );
   };
 

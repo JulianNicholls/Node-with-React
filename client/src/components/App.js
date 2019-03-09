@@ -6,6 +6,7 @@ import Header from './Header';
 import LandingPage from './LandingPage';
 import DashboardPage from './surveys/DashboardPage';
 import SurveyNew from './surveys/SurveyNew';
+import SurveyDetail from './surveys/SurveyDetail';
 
 import { fetchUser } from '../actions';
 
@@ -24,6 +25,7 @@ class App extends React.Component {
             <Route path="/" exact component={LandingPage} />
             <Route path="/surveys" exact component={DashboardPage} />
             <Route path="/surveys/new" component={SurveyNew} />
+            <Route path="/survey/:id" component={SurveyDetail} />
           </div>
         </BrowserRouter>
       </div>
