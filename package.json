@@ -42,7 +42,7 @@
     "stripe": "^6.25.1"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.6",
+    "babel-eslint": "^10.1.0",
     "concurrently": "^8.2.1",
     "eslint": "^5.15.1",
     "eslint-config-react-app": "^3.0.8",
