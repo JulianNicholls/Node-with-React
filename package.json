@@ -33,7 +33,7 @@
     "babel-preset-react": "^6.24.1",
     "cookie-session": "^2.1.1",
     "express": "^4.22.1",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "mongoose": "^8.9.5",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^1.0.0",
