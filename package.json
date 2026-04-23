@@ -39,7 +39,7 @@
     "passport-google-oauth20": "^1.0.0",
     "path-parser": "^4.2.0",
     "sendgrid": "^5.2.3",
-    "stripe": "^6.25.1"
+    "stripe": "^22.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
