@@ -17,7 +17,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "axios": "^1.20.0",
+    "axios": "^1.21.0",
     "materialize-css": "^1.0.0",
     "moment": "^2.31.0",
     "react": "^16.8.4",
